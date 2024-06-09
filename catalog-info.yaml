@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: mwt1xcduv-python-gitops
+  description: This is GitOps manifest for mwt1xcduv-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-name: mwt1xcduv-python
+    janus-idp.io/tekton: mwt1xcduv-python 
+    backstage.io/kubernetes-id: mwt1xcduv-python 
+    backstage.io/techdocs-ref: dir:. 
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:mwt1xcduv-python
